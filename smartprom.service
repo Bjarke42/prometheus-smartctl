@@ -1,9 +1,25 @@
 [Unit]
-Description=SMART Prometheus metrics
+Description=smartctl exporter service
+After=network-online.target
 
 [Service]
-ExecStart=/var/lib/homelab/smartprom.py
-Restart=always
+Type=simple
+User=root
+Group=root
+ExecStart=/usr/local/bin/smartprom.py \
+    --web.listen-address=0.0.0.0 \
+    --web.listen-port=9633 \
+    --smartctl.interval=120 \
+    --ignore_sata \
+    --show_mpath \
+    --connect_mpath_with_zpool \
+    --connect_mpath_to_part \
+    --smartctl=/usr/local/bin/smartctl_7.4
+SyslogIdentifier=smartctl_exporter
+Restart=on-failure
+RestartSec=1s
+StandardOutput=journal
+StandardError=journal
 
 [Install]
 WantedBy=multi-user.target
