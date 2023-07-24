@@ -6,7 +6,7 @@ This is a simple exporter for the [Prometheus metrics](https://prometheus.io/) u
 
 ## Install on server
 
-You need python3 and pip. In addition you need to install prometheus client with `pip install prometheus-client`. To make it a easy replace ment for the official smartctl exporter the smartprom.service is named smartctl_exporter and used port 9633.
+You need python3 and pip. In addition you need to install prometheus client with `pip install prometheus-client`. To make it a easy replacement for the official smartctl exporter the smartprom.service is named smartctl_exporter and used port 9633 as an example.
 
 Use smartctl version 7.3 or greater, if you have more than 105 scsi devices in your server. We recommend using version 7.3+ to see more data in grafana dashboards. The server grafana dashboard examples are made for smartctl version 7.4.
 
@@ -78,6 +78,8 @@ In addition you can use program arguemnts. The following arguments can be set, a
 - `connect_mpath_with_zpool`: Connect multipath device name to ZFS zpool name. Default is not to do this.
 - `connect_mpath_to_part`: Connect multipath device name to ZFS pool paritition. Use this if any of your zpools are using parittions as device. Default is not to do this.
 - `smartctl`: What smartctl command to use for this program. This is only used if you are not able to update the default smartctl program on server, beause of risk of breaking other monitoring tools. Default is not to use this.
+
+See smarprom.service as an example of using above program arguments. In addition, you can use smartprom.py -h to see all program arguments. 
 
 ## Grafana dashboard
 
