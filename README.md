@@ -4,9 +4,13 @@
 
 This is a simple exporter for the [Prometheus metrics](https://prometheus.io/) using [smartctl](https://www.smartmontools.org/). The script `smartprom.py` also comes with `smartprom.service` so that you can run this script in the background on your Linux OS via `systemctl`. The script will use port `9902`, you can change it by changing it directly in the script. This script exports all of the data available from the smartctl.
 
+## Install on server
 
+You need python3 and pip. In addition you need to install prometheus client with `pip install prometheus-client`. To make it a easy replace ment for the official smartctl exporter the smartprom.service is named smartctl_exporter and used port 9633.
 
-## Install
+Use smartctl version 7.3 or greater, if you have more than 105 scsi devices in your server. We recommend using version 7.3+ to see more data in grafana dashboards. The server grafana dashboard examples are made for smartctl version 7.4.
+
+## Docker Install
 
 _Note: You don't have to do this if you use the Docker image._
 
@@ -58,11 +62,22 @@ smartprom_airflow_temperature_cel_raw{drive="/dev/sda",model_family="Seagate Bar
 
 ## Configuration
 
-All configuration is done with environment variables.
+Configuration can be done with environment variables.
 
 - `SMARTCTL_REFRESH_INTERVAL`: (Optional) The refresh interval of the metrics. A larger value reduces CPU usage. The default is `60` seconds.
 - `SMARTCTL_EXPORTER_PORT`: (Optional) The address the exporter should listen on. The default is `9902`.
 - `SMARTCTL_EXPORTER_ADDRESS`: (Optional) The address the exporter should listen on. The default is to listen on all addresses.
+
+In addition you can use program arguemnts. The following arguments can be set, all are optional:
+
+- `web.listen-address`: The address to listen on. Default is 0.0.0.0.
+- `web.listen-port`: The port to listen on. Default is 9902.
+- `smartctl.interval`: Set update interval for polling scsi devices. Default is 60 seconds. If you have many devices consider setting it to 120 or above, to lower load on server.
+- `ignore_sata`: Ignore all SATA drives. Default is to not ignore them.
+- `show_mpath`: Connect SCSI device to multipath device name if you are using multipath. Default is not to do this.
+- `connect_mpath_with_zpool`: Connect multipath device name to ZFS zpool name. Default is not to do this.
+- `connect_mpath_to_part`: Connect multipath device name to ZFS pool paritition. Use this if any of your zpools are using parittions as device. Default is not to do this.
+- `smartctl`: What smartctl command to use for this program. This is only used if you are not able to update the default smartctl program on server, beause of risk of breaking other monitoring tools. Default is not to use this.
 
 ## Grafana dashboard
 
