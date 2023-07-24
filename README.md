@@ -10,6 +10,8 @@ You need python3 and pip. In addition you need to install prometheus client with
 
 Use smartctl version 7.3 or greater, if you have more than 105 scsi devices in your server. We recommend using version 7.3+ to see more data in grafana dashboards. The server grafana dashboard examples are made for smartctl version 7.4.
 
+Newest version of smartctl can be obtained [here](https://builds.smartmontools.org/).
+
 ## Docker Install
 
 _Note: You don't have to do this if you use the Docker image._
