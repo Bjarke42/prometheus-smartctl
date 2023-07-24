@@ -100,7 +100,10 @@ def get_device_info(dev: str) -> dict:
     """
     Returns a dictionary of device info
     """
-    results, _ = run_smartctl_cmd(['smartctl', '-i', '--json=c', dev])
+    if alt_smartctl is None:
+        results, _ = run_smartctl_cmd(['smartctl', '-i', '--json=c', dev])
+    else:
+        results, _ = run_smartctl_cmd([alt_smartctl, '-i', '--json=c', dev])
     results = json.loads(results)
     return {
         'model_family': results.get("model_family", "Unknown"),
@@ -193,7 +196,10 @@ def smart_sat(dev: str) -> dict:
     Runs the smartctl command on a internal or external "sat" device
     and processes its attributes
     """
-    results, exit_code = run_smartctl_cmd(['smartctl', '-A', '-H', '-d', 'sat', '--json=c', dev])
+    if alt_smartctl is None:
+        results, exit_code = run_smartctl_cmd(['smartctl', '-A', '-H', '-d', 'sat', '--json=c', dev])
+    else:
+        results, exit_code = run_smartctl_cmd([alt_smartctl, '-A', '-H', '-d', 'sat', '--json=c', dev])
     results = json.loads(results)
 
     attributes = {
@@ -232,7 +238,10 @@ def smart_nvme(dev: str) -> dict:
     Runs the smartctl command on a internal or external "nvme" device
     and processes its attributes
     """
-    results, exit_code = run_smartctl_cmd(['smartctl', '-A', '-H', '-d', 'nvme', '--json=c', dev])
+    if alt_smartctl is None:
+        results, exit_code = run_smartctl_cmd(['smartctl', '-A', '-H', '-d', 'nvme', '--json=c', dev])
+    else:
+        results, exit_code = run_smartctl_cmd([alt_smartctl, '-A', '-H', '-d', 'nvme', '--json=c', dev])
     results = json.loads(results)
 
     attributes = {
@@ -254,7 +263,10 @@ def smart_scsi(dev: str) -> dict:
     Runs the smartctl command on a "scsi" device
     and processes its attributes
     """
-    results, exit_code = run_smartctl_cmd(['smartctl', '-A', '-H', '-d', 'scsi', '--json=c', dev])
+    if alt_smartctl is None:
+        results, exit_code = run_smartctl_cmd(['smartctl', '-A', '-H', '-d', 'scsi', '--json=c', dev])
+    else:
+        results, exit_code = run_smartctl_cmd([alt_smartctl, '-A', '-H', '-d', 'scsi', '--json=c', dev])
     results = json.loads(results)
 
     attributes = {
