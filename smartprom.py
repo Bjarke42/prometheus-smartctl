@@ -369,7 +369,12 @@ def collect():
                 # Create metric if it does not exist
                 if metric not in METRICS:
                     desc = key.replace('_', ' ')
-                    code = hex(values[0]) if typ in SAT_TYPES else hex(values)
+                    if type(values) == int:
+                        code = hex(values[0]) if typ in SAT_TYPES else hex(values)
+                    elif type(values) == float:
+                        code = hex(int(values[0])) if typ in SAT_TYPES else hex(int(values))
+                    else: # FIXME: what type in sata?
+                        code = hex(values[0]) if typ in SAT_TYPES else hex(values)
                     print(f'Adding new gauge {metric} ({code})')
                     METRICS[metric] = prometheus_client.Gauge(metric, f'({code}) {desc}', LABELS)
 

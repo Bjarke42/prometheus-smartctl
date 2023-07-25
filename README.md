@@ -4,7 +4,7 @@
 
 This is a simple exporter for the [Prometheus metrics](https://prometheus.io/) using [smartctl](https://www.smartmontools.org/). The script `smartprom.py` also comes with `smartprom.service` so that you can run this script in the background on your Linux OS via `systemctl`. The script will use port `9902`, you can change it by changing it directly in the script. This script exports all of the data available from the smartctl.
 
-** This version is tested to use smartctl 7.4 **
+**This version is tested to use smartctl 7.4**
 
 ## Install on server
 
