@@ -107,9 +107,9 @@ def get_device_info(dev: str) -> dict:
     results = json.loads(results)
     return {
         'model_family': results.get("model_family", "Unknown"),
-        'model_name': results.get("model_name", "Unknown"),
+        'model_name': results.get("scsi_model_name", "Unknown"),
         'serial_number': results.get("serial_number", "Unknown"),
-        'revision': results.get("revision", "Unknown"),
+        'revision': results.get("scsi_revision", "Unknown"),
         'capacity': results.get('user_capacity',{}).get('bytes','Unknown')
     }
 
