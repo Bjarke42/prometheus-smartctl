@@ -282,6 +282,66 @@ def smart_scsi(dev: str) -> dict:
             attributes[key] = value
     return attributes
 
+def smart_scsi_details(dev: str) -> dict:
+    """
+    Runs smartctl command on a SCSI device with error data included
+    and processes its attributes.
+    """
+    if alt_smartctl is None:
+        results, exit_code = run_smartctl_cmd(['smartctl', '-A', '-H', '-l', 'error', '-d', 'scsi', '--json=c', dev])
+    else:
+        results, exit_code = run_smartctl_cmd([alt_smartctl, '-A', '-H', '-l', 'error', '-d', 'scsi', '--json=c', dev])
+    results = json.loads(results)
+    
+    #keys that start with should be removed
+    # Remove everything that has strings, otherwise you will send strings as gauges to prometheus
+    excl_l=['json_format_','smartctl_','local_time_','device_']
+
+    attributes = {}
+
+    #flatten json 
+    def flatten(x, name=''):
+        if type(x) is dict:
+            for a in x:
+                flatten(x[a], name + a + '_')
+        elif type(x) is list:
+            i = 0
+            for a in x:
+                flatten(a, name + str(i) + '_')
+                i += 1
+        else:
+            attributes[name[:-1]] = x
+ 
+    flatten(results)
+    
+    excl_l_remove=[]
+    # find all the keys i want to remove
+    for k,v in attributes.items():
+        for j in excl_l:
+            if k.startswith(j):
+                excl_l_remove.append(k)
+
+    # keep this one
+    if 'smartctl_exit_status' in excl_l_remove:
+        excl_l_remove.remove('smartctl_exit_status')
+
+    # pop the keys
+    for i in excl_l_remove:
+        attributes.pop(i)
+
+    #clean up data types of dict
+    for k,v in attributes.items():
+        if type(v) == str: # try to convert integers and float strings to int or float.
+            try:
+                attributes[k]=json.loads(v)
+            except json.decoder.JSONDecodeError as e: #pass real strings.
+                pass
+        if type(v) == bool:
+            if v == True:
+                attributes[k] = 1
+            else:
+                attributes[k] = 0
+    return attributes
 
 def collect():
     """
@@ -297,7 +357,7 @@ def collect():
             elif typ in NVME_TYPES:
                 attrs = smart_nvme(drive)
             elif typ in SCSI_TYPES:
-                attrs = smart_scsi(drive)
+                attrs = smart_scsi_details(drive)
             else:
                 continue
 

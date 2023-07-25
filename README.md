@@ -8,7 +8,7 @@ This is a simple exporter for the [Prometheus metrics](https://prometheus.io/) u
 
 You need python3 and pip. In addition you need to install prometheus client with `pip install prometheus-client`. To make it a easy replacement for the official smartctl exporter the smartprom.service is named smartctl_exporter and used port 9633 as an example.
 
-Use smartctl version 7.3 or greater, if you have more than 105 scsi devices in your server. We recommend using version 7.3+ to see more data in grafana dashboards. The server grafana dashboard examples are made for smartctl version 7.4.
+Use smartctl version 7.3 or greater, if you have more than 105 scsi devices in your server. We recommend using version 7.3+ to see more data in grafana dashboards. The server grafana dashboard examples are made for smartctl version 7.4 rc2. 
 
 Newest version of smartctl can be obtained [here](https://builds.smartmontools.org/).
 
