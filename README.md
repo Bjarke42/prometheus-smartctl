@@ -87,7 +87,7 @@ See smarprom.service as an example of using above program arguments. In addition
 
 ## Grafana dashboard
 
-There is a reference Grafana dashboard in [grafana/grafana_dashboard.json](./grafana/grafana_dashboard.json).
+There are reference Grafana dashboards in [grafana/](./grafana/).
 
-![](./grafana/grafana_dashboard_1.png)
-![](./grafana/grafana_dashboard_2.png)
+![](./grafana/smartctl-dashboard.JPG)
+![](./grafana/smartctl-disk-error-dashboard.JPG)
