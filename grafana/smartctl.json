@@ -1,0 +1,435 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 138,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "wQ-gX5E4z"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "custom": {
+              "align": "auto",
+              "cellOptions": {
+                "type": "auto"
+              },
+              "filterable": false,
+              "inspect": false
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "smartprom_smart_status_passed"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 55
+                },
+                {
+                  "id": "displayName",
+                  "value": "Status"
+                },
+                {
+                  "id": "custom.cellOptions",
+                  "value": {
+                    "mode": "gradient",
+                    "type": "color-background"
+                  }
+                },
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": null
+                      },
+                      {
+                        "color": "red",
+                        "value": 0
+                      },
+                      {
+                        "color": "green",
+                        "value": 1
+                      },
+                      {
+                        "color": "purple",
+                        "value": 2
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "drive"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 101
+                },
+                {
+                  "id": "unit",
+                  "value": "string"
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "revision"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 85
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Time"
+              },
+              "properties": [
+                {
+                  "id": "custom.hidden",
+                  "value": true
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "model_name"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 236
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "capacity"
+              },
+              "properties": [
+                {
+                  "id": "unit",
+                  "value": "bytes"
+                },
+                {
+                  "id": "custom.width",
+                  "value": 99
+                },
+                {
+                  "id": "custom.align",
+                  "value": "right"
+                },
+                {
+                  "id": "decimals",
+                  "value": 2
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "serial_number"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 188
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Status"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 63
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "mpath"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 185
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "smartprom_scsi_grown_defect_list"
+              },
+              "properties": [
+                {
+                  "id": "displayName",
+                  "value": "Grown Defect List"
+                },
+                {
+                  "id": "custom.cellOptions",
+                  "value": {
+                    "type": "color-background"
+                  }
+                },
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": null
+                      },
+                      {
+                        "color": "yellow",
+                        "value": 1
+                      },
+                      {
+                        "color": "red",
+                        "value": 2
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "smartprom_temperature_current"
+              },
+              "properties": [
+                {
+                  "id": "displayName",
+                  "value": "Current Temp"
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "smartprom_temperature_drive_trip"
+              },
+              "properties": [
+                {
+                  "id": "displayName",
+                  "value": "Trip Temp"
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 20,
+          "w": 24,
+          "x": 0,
+          "y": 0
+        },
+        "id": 1,
+        "options": {
+          "cellHeight": "sm",
+          "footer": {
+            "countRows": false,
+            "fields": "",
+            "reducer": [
+              "sum"
+            ],
+            "show": false
+          },
+          "frameIndex": 38,
+          "showHeader": true,
+          "sortBy": [
+            {
+              "desc": false,
+              "displayName": "drive"
+            }
+          ]
+        },
+        "pluginVersion": "10.0.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wQ-gX5E4z"
+            },
+            "editorMode": "builder",
+            "exemplar": false,
+            "expr": "smartprom_smart_status_passed{instance=\"$client\"}",
+            "instant": true,
+            "range": false,
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wQ-gX5E4z"
+            },
+            "editorMode": "builder",
+            "exemplar": false,
+            "expr": "smartprom_scsi_grown_defect_list{instance=\"$client\"}",
+            "hide": false,
+            "instant": true,
+            "range": false,
+            "refId": "B"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wQ-gX5E4z"
+            },
+            "editorMode": "builder",
+            "exemplar": false,
+            "expr": "smartprom_temperature_current{instance=\"$client\"}",
+            "hide": false,
+            "instant": true,
+            "range": false,
+            "refId": "C"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wQ-gX5E4z"
+            },
+            "editorMode": "builder",
+            "exemplar": false,
+            "expr": "smartprom_temperature_drive_trip{instance=\"$client\"}",
+            "hide": false,
+            "instant": true,
+            "range": false,
+            "refId": "D"
+          }
+        ],
+        "title": "Disks on $client",
+        "transformations": [
+          {
+            "id": "labelsToFields",
+            "options": {
+              "keepLabels": [
+                "capacity",
+                "model_name",
+                "mpath",
+                "revision",
+                "serial_number",
+                "zpool",
+                "drive"
+              ],
+              "mode": "columns"
+            }
+          },
+          {
+            "id": "merge",
+            "options": {}
+          }
+        ],
+        "type": "table"
+      }
+    ],
+    "refresh": "",
+    "schemaVersion": 38,
+    "style": "dark",
+    "tags": [
+      "erda",
+      "sif"
+    ],
+    "templating": {
+      "list": [
+        {
+          "current": {
+            "selected": false,
+            "text": "sh-rdmst-01.auit.au.dk:9633",
+            "value": "sh-rdmst-01.auit.au.dk:9633"
+          },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "wQ-gX5E4z"
+          },
+          "definition": "label_values(smartprom_smartctl_exit_status,instance)",
+          "hide": 0,
+          "includeAll": false,
+          "label": "Server Name",
+          "multi": false,
+          "name": "client",
+          "options": [],
+          "query": {
+            "query": "label_values(smartprom_smartctl_exit_status,instance)",
+            "refId": "PrometheusVariableQueryEditor-VariableQuery"
+          },
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 0,
+          "type": "query"
+        }
+      ]
+    },
+    "time": {
+      "from": "now-30m",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "smartctl",
+    "uid": "f15da930-1cc2-4bb5-857c-9aacfcaad25c",
+    "version": 19,
+    "weekStart": ""
+  }

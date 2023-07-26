@@ -1,0 +1,1334 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "description": "",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 139,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+      {
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 0
+        },
+        "id": 2,
+        "panels": [],
+        "title": "General overview",
+        "type": "row"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "wQ-gX5E4z"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "custom": {
+              "align": "auto",
+              "cellOptions": {
+                "type": "auto"
+              },
+              "inspect": false
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Time"
+              },
+              "properties": [
+                {
+                  "id": "custom.hidden",
+                  "value": true
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "smartprom_smart_status_passed"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 113
+                },
+                {
+                  "id": "displayName",
+                  "value": "Status"
+                },
+                {
+                  "id": "custom.cellOptions",
+                  "value": {
+                    "type": "color-background"
+                  }
+                },
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": null
+                      },
+                      {
+                        "color": "red",
+                        "value": 0
+                      },
+                      {
+                        "color": "green",
+                        "value": 1
+                      },
+                      {
+                        "color": "purple",
+                        "value": 2
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Status"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 68
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "capacity"
+              },
+              "properties": [
+                {
+                  "id": "unit",
+                  "value": "bytes"
+                },
+                {
+                  "id": "custom.width",
+                  "value": 95
+                },
+                {
+                  "id": "custom.align",
+                  "value": "right"
+                },
+                {
+                  "id": "decimals",
+                  "value": 2
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "drive"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 110
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "model_name"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 227
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "smartprom_scsi_grown_defect_list"
+              },
+              "properties": [
+                {
+                  "id": "displayName",
+                  "value": "Grown Defects"
+                },
+                {
+                  "id": "custom.width",
+                  "value": 125
+                },
+                {
+                  "id": "custom.cellOptions",
+                  "value": {
+                    "type": "color-background"
+                  }
+                },
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": null
+                      },
+                      {
+                        "color": "red",
+                        "value": -1
+                      },
+                      {
+                        "color": "green",
+                        "value": 0
+                      },
+                      {
+                        "color": "red",
+                        "value": 1
+                      },
+                      {
+                        "color": "purple",
+                        "value": 2
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "smartprom_scsi_error_counter_log_read_total_uncorrected_errors"
+              },
+              "properties": [
+                {
+                  "id": "displayName",
+                  "value": "Read Uncorrected"
+                },
+                {
+                  "id": "custom.width",
+                  "value": 140
+                },
+                {
+                  "id": "custom.cellOptions",
+                  "value": {
+                    "type": "color-background"
+                  }
+                },
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": null
+                      },
+                      {
+                        "color": "green",
+                        "value": 0
+                      },
+                      {
+                        "color": "#EAB839",
+                        "value": 1
+                      },
+                      {
+                        "color": "semi-dark-orange",
+                        "value": 100
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "smartprom_scsi_error_counter_log_write_total_uncorrected_errors"
+              },
+              "properties": [
+                {
+                  "id": "displayName",
+                  "value": "Write Uncorrected"
+                },
+                {
+                  "id": "custom.width",
+                  "value": 140
+                },
+                {
+                  "id": "custom.cellOptions",
+                  "value": {
+                    "type": "color-background"
+                  }
+                },
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": null
+                      },
+                      {
+                        "color": "green",
+                        "value": 0
+                      },
+                      {
+                        "color": "#EAB839",
+                        "value": 1
+                      },
+                      {
+                        "color": "semi-dark-orange",
+                        "value": 100
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "smartprom_scsi_error_counter_log_verify_total_uncorrected_errors"
+              },
+              "properties": [
+                {
+                  "id": "displayName",
+                  "value": "Verify Uncorrected"
+                },
+                {
+                  "id": "custom.width",
+                  "value": 150
+                },
+                {
+                  "id": "custom.cellOptions",
+                  "value": {
+                    "type": "color-background"
+                  }
+                },
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": null
+                      },
+                      {
+                        "color": "green",
+                        "value": 0
+                      },
+                      {
+                        "color": "#EAB839",
+                        "value": 1
+                      },
+                      {
+                        "color": "semi-dark-orange",
+                        "value": 100
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 15,
+          "w": 24,
+          "x": 0,
+          "y": 1
+        },
+        "id": 3,
+        "options": {
+          "cellHeight": "sm",
+          "footer": {
+            "countRows": false,
+            "fields": "",
+            "reducer": [
+              "sum"
+            ],
+            "show": false
+          },
+          "showHeader": true,
+          "sortBy": [
+            {
+              "desc": false,
+              "displayName": "serial_number"
+            }
+          ]
+        },
+        "pluginVersion": "10.0.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wQ-gX5E4z"
+            },
+            "editorMode": "builder",
+            "exemplar": false,
+            "expr": "smartprom_smart_status_passed{instance=\"$client\"}",
+            "instant": true,
+            "range": false,
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wQ-gX5E4z"
+            },
+            "editorMode": "builder",
+            "exemplar": false,
+            "expr": "smartprom_scsi_grown_defect_list{instance=\"$client\"}",
+            "hide": false,
+            "instant": true,
+            "range": false,
+            "refId": "B"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wQ-gX5E4z"
+            },
+            "editorMode": "builder",
+            "exemplar": false,
+            "expr": "smartprom_scsi_error_counter_log_read_total_uncorrected_errors{instance=\"$client\"}",
+            "hide": false,
+            "instant": true,
+            "range": false,
+            "refId": "C"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wQ-gX5E4z"
+            },
+            "editorMode": "builder",
+            "exemplar": false,
+            "expr": "smartprom_scsi_error_counter_log_write_total_uncorrected_errors{instance=\"$client\"}",
+            "hide": false,
+            "instant": true,
+            "range": false,
+            "refId": "D"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wQ-gX5E4z"
+            },
+            "editorMode": "builder",
+            "exemplar": false,
+            "expr": "smartprom_scsi_error_counter_log_verify_total_uncorrected_errors{instance=\"$client\"}",
+            "hide": false,
+            "instant": true,
+            "range": false,
+            "refId": "E"
+          }
+        ],
+        "title": "disk overview for $client",
+        "transformations": [
+          {
+            "id": "labelsToFields",
+            "options": {
+              "keepLabels": [
+                "capacity",
+                "drive",
+                "model_name",
+                "serial_number"
+              ]
+            }
+          },
+          {
+            "id": "merge",
+            "options": {}
+          }
+        ],
+        "type": "table"
+      },
+      {
+        "collapsed": true,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 16
+        },
+        "id": 1,
+        "panels": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wQ-gX5E4z"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "thresholds"
+                },
+                "custom": {
+                  "align": "auto",
+                  "cellOptions": {
+                    "type": "auto"
+                  },
+                  "inspect": false
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                }
+              },
+              "overrides": [
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "Time"
+                  },
+                  "properties": [
+                    {
+                      "id": "custom.hidden",
+                      "value": true
+                    }
+                  ]
+                },
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "smartprom_smart_status_passed"
+                  },
+                  "properties": [
+                    {
+                      "id": "custom.width",
+                      "value": 113
+                    },
+                    {
+                      "id": "displayName",
+                      "value": "Status"
+                    },
+                    {
+                      "id": "custom.cellOptions",
+                      "value": {
+                        "type": "color-background"
+                      }
+                    },
+                    {
+                      "id": "thresholds",
+                      "value": {
+                        "mode": "absolute",
+                        "steps": [
+                          {
+                            "color": "green",
+                            "value": null
+                          },
+                          {
+                            "color": "red",
+                            "value": 0
+                          },
+                          {
+                            "color": "green",
+                            "value": 1
+                          },
+                          {
+                            "color": "purple",
+                            "value": 2
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "Status"
+                  },
+                  "properties": [
+                    {
+                      "id": "custom.width",
+                      "value": 68
+                    }
+                  ]
+                },
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "capacity"
+                  },
+                  "properties": [
+                    {
+                      "id": "unit",
+                      "value": "bytes"
+                    },
+                    {
+                      "id": "custom.width",
+                      "value": 95
+                    },
+                    {
+                      "id": "custom.align",
+                      "value": "right"
+                    },
+                    {
+                      "id": "decimals",
+                      "value": 2
+                    }
+                  ]
+                },
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "drive"
+                  },
+                  "properties": [
+                    {
+                      "id": "custom.width",
+                      "value": 110
+                    }
+                  ]
+                },
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "model_name"
+                  },
+                  "properties": [
+                    {
+                      "id": "custom.width",
+                      "value": 227
+                    }
+                  ]
+                },
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "smartprom_scsi_grown_defect_list"
+                  },
+                  "properties": [
+                    {
+                      "id": "displayName",
+                      "value": "Grown Defects"
+                    },
+                    {
+                      "id": "custom.width",
+                      "value": 125
+                    },
+                    {
+                      "id": "custom.cellOptions",
+                      "value": {
+                        "type": "color-background"
+                      }
+                    },
+                    {
+                      "id": "thresholds",
+                      "value": {
+                        "mode": "absolute",
+                        "steps": [
+                          {
+                            "color": "green",
+                            "value": null
+                          },
+                          {
+                            "color": "red",
+                            "value": -1
+                          },
+                          {
+                            "color": "green",
+                            "value": 0
+                          },
+                          {
+                            "color": "red",
+                            "value": 1
+                          },
+                          {
+                            "color": "purple",
+                            "value": 2
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "smartprom_scsi_error_counter_log_read_total_uncorrected_errors"
+                  },
+                  "properties": [
+                    {
+                      "id": "displayName",
+                      "value": "Read Uncorrected"
+                    },
+                    {
+                      "id": "custom.width",
+                      "value": 140
+                    },
+                    {
+                      "id": "custom.cellOptions",
+                      "value": {
+                        "type": "color-background"
+                      }
+                    },
+                    {
+                      "id": "thresholds",
+                      "value": {
+                        "mode": "absolute",
+                        "steps": [
+                          {
+                            "color": "green",
+                            "value": null
+                          },
+                          {
+                            "color": "green",
+                            "value": 0
+                          },
+                          {
+                            "color": "#EAB839",
+                            "value": 1
+                          },
+                          {
+                            "color": "semi-dark-orange",
+                            "value": 100
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "smartprom_scsi_error_counter_log_write_total_uncorrected_errors"
+                  },
+                  "properties": [
+                    {
+                      "id": "displayName",
+                      "value": "Write Uncorrected"
+                    },
+                    {
+                      "id": "custom.width",
+                      "value": 140
+                    },
+                    {
+                      "id": "custom.cellOptions",
+                      "value": {
+                        "type": "color-background"
+                      }
+                    },
+                    {
+                      "id": "thresholds",
+                      "value": {
+                        "mode": "absolute",
+                        "steps": [
+                          {
+                            "color": "green",
+                            "value": null
+                          },
+                          {
+                            "color": "green",
+                            "value": 0
+                          },
+                          {
+                            "color": "#EAB839",
+                            "value": 1
+                          },
+                          {
+                            "color": "semi-dark-orange",
+                            "value": 100
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "smartprom_scsi_error_counter_log_verify_total_uncorrected_errors"
+                  },
+                  "properties": [
+                    {
+                      "id": "displayName",
+                      "value": "Verify Uncorrected"
+                    },
+                    {
+                      "id": "custom.width",
+                      "value": 150
+                    },
+                    {
+                      "id": "custom.cellOptions",
+                      "value": {
+                        "type": "color-background"
+                      }
+                    },
+                    {
+                      "id": "thresholds",
+                      "value": {
+                        "mode": "absolute",
+                        "steps": [
+                          {
+                            "color": "green",
+                            "value": null
+                          },
+                          {
+                            "color": "green",
+                            "value": 0
+                          },
+                          {
+                            "color": "#EAB839",
+                            "value": 1
+                          },
+                          {
+                            "color": "semi-dark-orange",
+                            "value": 100
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "gridPos": {
+              "h": 4,
+              "w": 24,
+              "x": 0,
+              "y": 17
+            },
+            "id": 4,
+            "options": {
+              "cellHeight": "sm",
+              "footer": {
+                "countRows": false,
+                "fields": "",
+                "reducer": [
+                  "sum"
+                ],
+                "show": false
+              },
+              "showHeader": true,
+              "sortBy": []
+            },
+            "pluginVersion": "10.0.0",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "wQ-gX5E4z"
+                },
+                "editorMode": "builder",
+                "exemplar": false,
+                "expr": "smartprom_smart_status_passed{instance=\"$client\", drive=\"$device\"}",
+                "instant": true,
+                "range": false,
+                "refId": "A"
+              }
+            ],
+            "title": "$device on $client",
+            "transformations": [
+              {
+                "id": "labelsToFields",
+                "options": {
+                  "keepLabels": [
+                    "capacity",
+                    "drive",
+                    "model_name",
+                    "serial_number",
+                    "mpath",
+                    "revision",
+                    "type",
+                    "zpool"
+                  ]
+                }
+              }
+            ],
+            "type": "table"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wQ-gX5E4z"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "decimals": 2,
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "short"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 10,
+              "w": 24,
+              "x": 0,
+              "y": 21
+            },
+            "id": 5,
+            "options": {
+              "legend": {
+                "calcs": [],
+                "displayMode": "list",
+                "placement": "bottom",
+                "showLegend": true
+              },
+              "tooltip": {
+                "mode": "single",
+                "sort": "none"
+              }
+            },
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "wQ-gX5E4z"
+                },
+                "editorMode": "builder",
+                "expr": "smartprom_scsi_error_counter_log_read_errors_corrected_by_eccfast{instance=\"$client\", drive=\"$device\"}",
+                "instant": false,
+                "legendFormat": "Read errors corrected by eccfast",
+                "range": true,
+                "refId": "A"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "wQ-gX5E4z"
+                },
+                "editorMode": "builder",
+                "expr": "smartprom_scsi_error_counter_log_read_errors_corrected_by_eccdelayed{instance=\"$client\", drive=\"$device\"}",
+                "hide": false,
+                "instant": false,
+                "legendFormat": "Read errors corrected by eccdelayed",
+                "range": true,
+                "refId": "B"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "wQ-gX5E4z"
+                },
+                "editorMode": "builder",
+                "expr": "smartprom_scsi_error_counter_log_read_errors_corrected_by_rereads_rewrites{instance=\"$client\", drive=\"$device\"}",
+                "hide": false,
+                "instant": false,
+                "legendFormat": "Read errors corrected by rereads rewrites",
+                "range": true,
+                "refId": "C"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "wQ-gX5E4z"
+                },
+                "editorMode": "builder",
+                "expr": "smartprom_scsi_error_counter_log_read_correction_algorithm_invocations{instance=\"$client\", drive=\"$device\"}",
+                "hide": false,
+                "instant": false,
+                "legendFormat": "Read correction invocations",
+                "range": true,
+                "refId": "D"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "wQ-gX5E4z"
+                },
+                "editorMode": "builder",
+                "expr": "smartprom_scsi_error_counter_log_write_errors_corrected_by_eccfast{instance=\"$client\", drive=\"$device\"}",
+                "hide": false,
+                "instant": false,
+                "legendFormat": "Write errors corrected by eccfast",
+                "range": true,
+                "refId": "E"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "wQ-gX5E4z"
+                },
+                "editorMode": "builder",
+                "expr": "smartprom_scsi_error_counter_log_write_errors_corrected_by_eccdelayed{instance=\"$client\", drive=\"$device\"}",
+                "hide": false,
+                "instant": false,
+                "legendFormat": "Write errors corrected by eccdelayed",
+                "range": true,
+                "refId": "F"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "wQ-gX5E4z"
+                },
+                "editorMode": "builder",
+                "expr": "smartprom_scsi_error_counter_log_write_errors_corrected_by_rereads_rewrites{instance=\"$client\", drive=\"$device\"}",
+                "hide": false,
+                "instant": false,
+                "legendFormat": "Write errors corrected by rereads rewrites",
+                "range": true,
+                "refId": "G"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "wQ-gX5E4z"
+                },
+                "editorMode": "builder",
+                "expr": "smartprom_scsi_error_counter_log_write_correction_algorithm_invocations{instance=\"$client\", drive=\"$device\"}",
+                "hide": false,
+                "instant": false,
+                "legendFormat": "Write correction invocations",
+                "range": true,
+                "refId": "H"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "wQ-gX5E4z"
+                },
+                "editorMode": "builder",
+                "expr": "smartprom_scsi_error_counter_log_verify_errors_corrected_by_eccfast{instance=\"$client\", drive=\"$device\"}",
+                "hide": false,
+                "instant": false,
+                "legendFormat": "Verify errors corrected by eccfast",
+                "range": true,
+                "refId": "I"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "wQ-gX5E4z"
+                },
+                "editorMode": "builder",
+                "expr": "smartprom_scsi_error_counter_log_verify_errors_corrected_by_eccdelayed{instance=\"$client\", drive=\"$device\"}",
+                "hide": false,
+                "instant": false,
+                "legendFormat": "Verify errors corrected by eccdelayed",
+                "range": true,
+                "refId": "J"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "wQ-gX5E4z"
+                },
+                "editorMode": "builder",
+                "expr": "smartprom_scsi_error_counter_log_verify_errors_corrected_by_rereads_rewrites{instance=\"$client\", drive=\"$device\"}",
+                "hide": false,
+                "instant": false,
+                "legendFormat": "Verify errors corrected by rereads rewrites",
+                "range": true,
+                "refId": "K"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "wQ-gX5E4z"
+                },
+                "editorMode": "builder",
+                "expr": "smartprom_scsi_error_counter_log_verify_correction_algorithm_invocations{instance=\"$client\", drive=\"$device\"}",
+                "hide": false,
+                "instant": false,
+                "legendFormat": "Verify correction invocations",
+                "range": true,
+                "refId": "L"
+              }
+            ],
+            "title": "SCSI error counter for $device on $client",
+            "type": "timeseries"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wQ-gX5E4z"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "decimals": 4,
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "gbytes"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 9,
+              "w": 24,
+              "x": 0,
+              "y": 31
+            },
+            "id": 6,
+            "options": {
+              "legend": {
+                "calcs": [],
+                "displayMode": "list",
+                "placement": "bottom",
+                "showLegend": true
+              },
+              "tooltip": {
+                "mode": "single",
+                "sort": "none"
+              }
+            },
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "wQ-gX5E4z"
+                },
+                "editorMode": "builder",
+                "expr": "smartprom_scsi_error_counter_log_read_gigabytes_processed{instance=\"$client\", drive=\"$device\"}",
+                "instant": false,
+                "legendFormat": "Read",
+                "range": true,
+                "refId": "A"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "wQ-gX5E4z"
+                },
+                "editorMode": "builder",
+                "expr": "smartprom_scsi_error_counter_log_write_gigabytes_processed{instance=\"$client\", drive=\"$device\"}",
+                "hide": false,
+                "instant": false,
+                "legendFormat": "Write",
+                "range": true,
+                "refId": "B"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "wQ-gX5E4z"
+                },
+                "editorMode": "builder",
+                "expr": "smartprom_scsi_error_counter_log_verify_gigabytes_processed{instance=\"$client\", drive=\"$device\"}",
+                "hide": false,
+                "instant": false,
+                "legendFormat": "Verify",
+                "range": true,
+                "refId": "C"
+              }
+            ],
+            "title": "Error Processed for $device on $client",
+            "type": "timeseries"
+          }
+        ],
+        "title": "Specific Device",
+        "type": "row"
+      }
+    ],
+    "refresh": "",
+    "schemaVersion": 38,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": [
+        {
+          "current": {
+            "selected": false,
+            "text": "sh-rdmst-01.auit.au.dk:9633",
+            "value": "sh-rdmst-01.auit.au.dk:9633"
+          },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "wQ-gX5E4z"
+          },
+          "definition": "label_values(smartprom_smartctl_exit_status,instance)",
+          "hide": 0,
+          "includeAll": false,
+          "label": "Server Name",
+          "multi": false,
+          "name": "client",
+          "options": [],
+          "query": {
+            "query": "label_values(smartprom_smartctl_exit_status,instance)",
+            "refId": "PrometheusVariableQueryEditor-VariableQuery"
+          },
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 0,
+          "type": "query"
+        },
+        {
+          "current": {
+            "selected": false,
+            "text": "/dev/sda",
+            "value": "/dev/sda"
+          },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "wQ-gX5E4z"
+          },
+          "definition": "label_values(smartprom_smartctl_exit_status,drive)",
+          "hide": 0,
+          "includeAll": false,
+          "label": "Device",
+          "multi": false,
+          "name": "device",
+          "options": [],
+          "query": {
+            "query": "label_values(smartprom_smartctl_exit_status,drive)",
+            "refId": "PrometheusVariableQueryEditor-VariableQuery"
+          },
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 0,
+          "type": "query"
+        }
+      ]
+    },
+    "time": {
+      "from": "now-1h",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "smartctl Disk Errors",
+    "uid": "c63757ce-8081-456a-ab6a-c369873d923d",
+    "version": 16,
+    "weekStart": ""
+  }
